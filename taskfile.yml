@@ -11,5 +11,5 @@ tasks:
     deps: [ build ]
     cmds:
       - scp ticket_machine btk@ticket.local:/home/btk/ticket-machine/ticket_machine
-      - scp mghgt.png btk@ticket.local:/home/btk/ticket-machine/static/mghgt
+      - scp mghgt.png btk@ticket.local:/home/btk/ticket-machine/static/mghgt.png
     silent: false
