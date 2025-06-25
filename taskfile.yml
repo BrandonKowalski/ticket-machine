@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - rm -f ticket_machine || true
+      - GOOS=linux GOARCH=arm64 go build -o ticket_machine
+    silent: false
+
+  deploy:
+    deps: [ build ]
+    cmds:
+      - scp ticket_machine btk@ticket.local:/home/btk/ticket-machine/ticket_machine
+      - scp mghgt.png btk@ticket.local:/home/btk/ticket-machine/static/mghgt
+    silent: false
